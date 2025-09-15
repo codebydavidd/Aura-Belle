@@ -1,7 +1,7 @@
 // Countdown Timer
 function updateCountdown() {
     // Set launch date (30 days from now)
-    const launchDate = new Date();
+    const launchDate = new Date("October 24, 2025 10:00:00");
     launchDate.setDate(new Date().getDate() + 30);
     
     const now = new Date().getTime();
