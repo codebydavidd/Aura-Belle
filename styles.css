@@ -13,6 +13,7 @@
     --white: #ffffff;
     --gradient: linear-gradient(135deg, #ab07ab 0%, #e580e5 100%);
     --shadow: 0 10px 30px rgba(171, 7, 171, 0.15);
+    --logo-size: 150px; /* Tamanho considerável e fácil de mudar */
 }
 
 body {
@@ -101,30 +102,20 @@ body {
 }
 
 .logo-circle {
-
-    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     animation: pulse 2s ease-in-out infinite;
-    box-shadow: var(--shadow);
+    width: var(--logo-size);
+    height: var(--logo-size);
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(171, 7, 171, 0.3);
 }
 
-.logo-initial{
-    font-family: 'Playfair Display', serif;
-    font-size: 0.1px;
-    font-weight: 700;
-    color: var(--white);
-}
-
-.brand-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    font-weight: 200;
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.actual-logo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .coming-soon {
@@ -298,12 +289,25 @@ body {
     40% { transform: scale(1); }
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .brand-name {
+/* Responsividade */
+@media (max-width: 992px) {
+    .coming-soon-text {
         font-size: 2.5rem;
+        letter-spacing: 0.15em;
     }
-    
+
+    .description {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    .countdown-container {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
     .coming-soon-text {
         font-size: 3rem;
     }
@@ -332,35 +336,10 @@ body {
     }
 }
 
-/* Responsividade Extra */
-
-/* Tablets pequenos */
-@media (max-width: 992px) {
-    .coming-soon-text {
-        font-size: 2.5rem;
-        letter-spacing: 0.15em;
-    }
-
-    .description {
-        font-size: 1rem;
-        padding: 0 10px;
-    }
-
-    .countdown-container {
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
-}
-
-/* Celulares médios */
 @media (max-width: 576px) {
     .hero-section {
         flex-direction: column;
         min-height: 60vh;
-    }
-
-    .brand-name {
-        font-size: 1.8rem;
     }
 
     .coming-soon-text {
@@ -384,14 +363,9 @@ body {
     }
 }
 
-/* Celulares muito pequenos */
 @media (max-width: 375px) {
     .coming-soon-text {
         font-size: 1.6rem;
-    }
-
-    .brand-name {
-        font-size: 1.5rem;
     }
 
     .description {
